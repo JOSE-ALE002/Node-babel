@@ -3,6 +3,7 @@ import indexRoute from './routes/index.routes';
 import './database';
 import path from 'path';    
 const app = express();
+import morgan from 'morgan';
 
 console.log(__dirname + "/public");
 
@@ -13,6 +14,7 @@ console.log(__dirname + "/public");
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
+app.use(morgan("dev")); //Con esta linea podemos ver en la consola, las rutas que visita el usuario
 
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', "ejs");

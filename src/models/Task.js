@@ -17,7 +17,7 @@ const taskShema = new Schema({
         unique: true,
         trim: true
     },
-    descripcion: {
+    description: {
         type: String,
         required: true
     },
